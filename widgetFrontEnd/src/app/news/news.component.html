@@ -1,0 +1,46 @@
+<div class="grid">
+  <!-- <div class="col-7"></div> -->
+
+  <!-- <div class="col-5"> -->
+    <!-- <p-virtualScroller [value]="news" scrollHeight="450px" [itemSize]="100" [lazy]="true">
+      <ng-template pTemplate="header"> Lastest US News </ng-template>
+
+      <ng-template let-n pTemplate="item">
+
+        <p-card title={{n.title}}>
+          <ng-template pTemplate="header">
+            <img alt="Card" src={{n.urlToImage}} />
+          </ng-template>
+          <ng-template pTemplate="content">
+            <p>
+                {{n.description}}
+            </p>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <p-button label="Learn More" (onClick)="redirectUrl(n.url)"></p-button>
+          </ng-template>
+        </p-card>
+
+      </ng-template>
+
+    </p-virtualScroller> -->
+    <!-- <div class="flex justify-content-start flex-wrap "></div> -->
+    <div class="p-3">
+      <h2>Latest US News</h2>
+    </div>
+    <div class="overflow-scroll surface-overlay p-3" style="height: 675px">
+      <p-card *ngFor="let n of news" title={{n.title}}>
+        <ng-template pTemplate="header">
+          <img alt="Card" src={{n.urlToImage}} />
+        </ng-template>
+        <ng-template pTemplate="content">
+          <p>
+              {{n.description}}
+          </p>
+          <p-button label="Learn More" (onClick)="redirectUrl(n.url)"></p-button>
+        </ng-template>
+      </p-card>
+    </div>
+
+  <!-- </div> -->
+</div>
